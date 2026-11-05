@@ -68,4 +68,10 @@ Validação realizada: verificador estático aprovado; respostas HTTP 200 para a
 
 ## Acessibilidade, privacidade e desempenho
 
+### Revisão da prévia
+
+A abertura recebeu fundo verde claro `#d4e5c3`, e a fotografia da seção sobre foi substituída por `clinica-3.jpg`. Em 05/11/2026, o perfil oficial do Google Maps (<https://maps.app.goo.gl/UWZRt281mYaTSqfA6>) foi acessado diretamente e confirmou nota 5,0 com 12 avaliações, além do telefone e endereço já utilizados. Foram incluídos dois trechos curtos de comentários públicos de Ana Paula Silva de Araujo e NELSON, com atribuição, indicação de trecho e links para a fonte. A nota é uma fotografia da data de consulta, sem sincronização automática. Não foram reproduzidos relatos clínicos detalhados ou dados de saúde dos avaliadores.
+
+A camada WebGL da abertura foi desativada em `css/refinements.css` para manter o fundo verde uniforme solicitado; o script não inicia quando o canvas está oculto. A revisão visual desktop confirmou o fundo, a foto nova e os dois cards, sem rolagem horizontal no tamanho conferido. Os testes de estrutura e interações continuam aprovados.
+
 Conteúdo e FAQ continuam acessíveis sem JavaScript, menu possui alternativa sem scripts e links de fotos abrem os originais. Há skip link, foco visível, imagens com dimensões, lazy loading secundário e diálogo modal nativo. Animações respeitam `prefers-reduced-motion`; WebGL não inicia nessa preferência. O efeito para ao sair da viewport ou ocultar a aba. Não há coleta de formulários, analytics, pixels, login ou pagamentos. Fontes e mapa utilizam os serviços externos do Google, descritos na página de privacidade.

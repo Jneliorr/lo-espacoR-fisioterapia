@@ -2,7 +2,7 @@
   'use strict';
   const canvas = document.querySelector('#organic-canvas');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (!canvas || reduced.matches) return;
+  if (!canvas || reduced.matches || getComputedStyle(canvas).display === 'none') return;
   let gl;
   try { gl = canvas.getContext('webgl', { alpha: true, antialias: false, depth: false, powerPreference: 'low-power' }); }
   catch { return; }
@@ -22,7 +22,8 @@
       float cloud = 1.0 - smoothstep(0.0, 0.62 + breath, length((p - center) * vec2(0.85, 1.0) + vec2(wave, 0.0)));
       float ripple = sin(p.x * 3.5 + p.y * 4.0 - time * 0.13) * 0.5 + 0.5;
       vec3 color = mix(vec3(0.82, 0.87, 0.73), vec3(0.68, 0.79, 0.65), ripple);
-      gl_FragColor = vec4(color, cloud * 0.2);
+      float alpha = cloud * 0.2;
+      gl_FragColor = vec4(color * alpha, alpha);
     }`;
   function shader(type, source) {
     const result = gl.createShader(type);
